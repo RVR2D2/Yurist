@@ -1,0 +1,1498 @@
+
+@font-face {
+font-family: 'Proxima Nova Regular';
+src: url('../fonts/ProximaNova-Regular.eot');
+src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
+url('../fonts/ProximaNova-Regular.woff') format('woff'),
+url('../fonts/ProximaNova-Regular.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'Proxima Nova Semibold';
+src: url('../fonts/ProximaNova-Semibold.eot');
+src: url('../fonts/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+url('../fonts/ProximaNova-Semibold.woff') format('woff'),
+url('../fonts/ProximaNova-Semibold.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'Proxima Nova Bold';
+src: url('../fonts/ProximaNova-Bold.eot');
+src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+url('../fonts/ProximaNova-Bold.woff') format('woff'),
+url('../fonts/ProximaNova-Bold.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+
+$grin:#10A578;
+$black:#161737;
+$gray:#8c8da4;
+$gray-light:#e7e8f4;
+$regular: 'Proxima Nova Regular',
+sans-serif;
+$medium:'Proxima Nova Semibold',
+sans-serif;
+$bold:'Proxima Nova Bold',
+sans-serif;
+* {
+	box-sizing: border-box;
+	  outline: 0;
+}
+a {
+	text-decoration: none; 	
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color:white;
+	font-family: $medium;
+	font-size: 16px;
+	&:hover {
+		color:$gray-light;
+	}
+
+}
+.bg-light {
+	background-color: $grin!important; 
+}
+.dropdown a {
+	color:white;
+	font-family: $medium;
+	font-size: 16px;
+}
+.navbar-brand {
+	padding: 0;
+}
+
+
+.navbar-light .navbar-toggler-icon {
+	background-image: url(../image/Main/menu.svg);
+	background-size: auto;
+}
+.navbar-light .navbar-toggler {
+    color: transparent;
+    border-color: transparent;
+}
+.btn_stroke{ 
+	margin-left: 10px;
+	color:white;
+	background-color:$grin;
+	border: 1px solid white;
+	padding: 10px 25px;
+	border-radius:6px;
+	font-family: $medium;
+	font-size: 16px;
+} 
+.btn_fill {
+	border-radius:6px;
+	background-color:white;
+	color:$grin;
+padding: 10px 15px;
+	border:none;
+	margin-left: 10px;
+	font-family: $medium;
+	font-size: 16px;
+}
+.header_arrow {
+	transform: translateY(-2px);
+	margin-right: 20px;
+}
+.dropdown {
+		transform: translateY(-4px);
+}
+//  Табы
+
+.tabs {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: relative;
+  background: white;
+  padding: 50px;
+  padding-bottom: 80px;
+  // width: 70%;
+  // height: 250px;
+  // box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 5px;
+  min-width: 240px;
+}
+.tabs input[name="tab-control"] {
+  display: none;
+}
+.tabs .content section h2,
+.tabs ul li label {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 18px;
+  color: #428BFF;
+}
+.tabs ul {
+  list-style-type: none;
+  padding-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.tabs ul li {
+  box-sizing: border-box;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 25%;
+  padding: 0 10px;
+  text-align: center;
+}
+.tabs ul li label {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #929daf;
+  padding: 5px auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tabs ul li label br {
+  display: none;
+}
+.tabs ul li label svg {
+  fill: #929daf;
+  height: 1.2em;
+  vertical-align: bottom;
+  margin-right: 0.2em;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.tabs ul li label:hover, .tabs ul li label:focus, .tabs ul li label:active {
+  outline: 0;
+  color: #bec5cf;
+}
+.tabs ul li label:hover svg, .tabs ul li label:focus svg, .tabs ul li label:active svg {
+  fill: #bec5cf;
+}
+.tabs .slider {
+  position: relative;
+  width: 25%;
+  -webkit-transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+  transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+}
+.tabs .slider .indicator {
+  position: relative;
+  width: 200px;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 2px;
+  background: $grin;
+  border-radius: 1px;
+}
+.tabs .content {
+  margin-top: 30px;
+}
+.tabs .content section {
+  display: none;
+  -webkit-animation-name: content;
+          animation-name: content;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  line-height: 1.4;
+}
+.tabs .content section h2 {
+  color: #428BFF;
+  display: none;
+}
+.tabs .content section h2::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #428BFF;
+  margin-top: 5px;
+  left: 1px;
+}
+.tabs input[name="tab-control"]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
+  cursor: default;
+  color: #428BFF;
+}
+.tabs input[name="tab-control"]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label svg {
+  fill: #428BFF;
+}
+@media (max-width: 600px) {
+  .tabs input[name="tab-control"]:nth-of-type(1):checked ~ ul > li:nth-child(1) > label {
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
+.tabs input[name="tab-control"]:nth-of-type(1):checked ~ .slider {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+.tabs input[name="tab-control"]:nth-of-type(1):checked ~ .content > section:nth-child(1) {
+  display: block;
+}
+.tabs input[name="tab-control"]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
+  cursor: default;
+  color: #428BFF;
+}
+.tabs input[name="tab-control"]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label svg {
+  fill: #428BFF;
+}
+@media (max-width: 600px) {
+  .tabs input[name="tab-control"]:nth-of-type(2):checked ~ ul > li:nth-child(2) > label {
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
+.tabs input[name="tab-control"]:nth-of-type(2):checked ~ .slider {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.tabs input[name="tab-control"]:nth-of-type(2):checked ~ .content > section:nth-child(2) {
+  display: block;
+}
+.tabs input[name="tab-control"]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
+  cursor: default;
+  color: #428BFF;
+}
+.tabs input[name="tab-control"]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label svg {
+  fill: #428BFF;
+}
+@media (max-width: 600px) {
+  .tabs input[name="tab-control"]:nth-of-type(3):checked ~ ul > li:nth-child(3) > label {
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
+.tabs input[name="tab-control"]:nth-of-type(3):checked ~ .slider {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+.tabs input[name="tab-control"]:nth-of-type(3):checked ~ .content > section:nth-child(3) {
+  display: block;
+}
+.tabs input[name="tab-control"]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label {
+  cursor: default;
+  color: #428BFF;
+}
+.tabs input[name="tab-control"]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label svg {
+  fill: #428BFF;
+}
+@media (max-width: 600px) {
+  .tabs input[name="tab-control"]:nth-of-type(4):checked ~ ul > li:nth-child(4) > label {
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
+.tabs input[name="tab-control"]:nth-of-type(4):checked ~ .slider {
+  -webkit-transform: translateX(300%);
+          transform: translateX(300%);
+}
+.tabs input[name="tab-control"]:nth-of-type(4):checked ~ .content > section:nth-child(4) {
+  display: block;
+}
+@-webkit-keyframes content {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(5%);
+            transform: translateY(5%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@keyframes content {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(5%);
+            transform: translateY(5%);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@media (max-width: 1000px) {
+  .tabs ul li label {
+    white-space: initial;
+  }
+  .tabs ul li label br {
+    display: initial;
+  }
+  .tabs ul li label svg {
+    height: 1.5em;
+  }
+}
+@media (max-width: 600px) {
+  .tabs ul li label {
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .tabs ul li label span {
+    display: none;
+  }
+  .tabs .slider {
+    display: none;
+  }
+  .tabs .content {
+    margin-top: 20px;
+  }
+  .tabs .content section h2 {
+    display: block;
+  }
+}
+
+
+
+
+@media (max-width: 375px) {
+.navbar-brand {
+	padding: 0;
+	width: 30px;
+}
+.dropdown a {
+	font-size: 14px;
+	margin-left:15px;
+}
+.header_arrow {
+	margin-right: 0px;
+}
+.btn_stroke{ 
+	margin-left: 0px;
+	padding: 15px 150px;
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+.btn_fill {
+	font-size: 18px;
+	padding: 15px 120px;
+	border:none;
+	margin-left: 0px;
+	margin-bottom: 15px;
+}
+.bg-light {
+    background-color: #10A578 !important;
+}
+}
+// Навигация
+.col,.col-1,.col-2,.col-3, .btn {
+	padding: 0;
+	margin: 0;
+}
+			.no {
+		color:$gray;
+		font-family: $medium;
+		font-size: 16px;
+	}
+	.cons {
+		color:$black;
+		margin-top: 15px;
+		font-family: $regular;
+	}
+				.yes {
+		color:$grin;
+		font-family: $medium;
+		font-size: 16px;
+	}
+h4 {
+			font-family: $medium;
+		font-size: 42px;
+		color:$black;
+} 
+.navigation {
+background-color: $grin;
+height: 70px;
+font-size: 16px;
+font-family: $medium;
+&_logo {
+	width: 111px;
+	height: 31px;
+	padding-top: 21px;
+} 
+&_city {
+	padding-left: 26px;
+	padding-top: 25px;
+	&_img {
+		padding-left: 8px;
+	}
+}
+&_specialists {
+	padding-left: 65px;
+	padding-top: 25px;
+}
+&_compani,
+&_notaries,
+&_benefit {
+	padding-left: 24px;
+	padding-top: 25px;
+}
+button {
+	border-radius: 4px;
+}
+.btn-1 {
+	padding: 12px 25px;
+	background-color: transparent;
+	border:1px solid #FFFFFF;
+	color:#FFFFFF;
+}
+.btn-2 {
+padding: 12px 14px;
+color:$grin;
+background-color: #ffffff;
+border:none;
+}
+&_circuit {
+	padding-left:25px;
+		margin-top: 13px;
+		
+
+}
+&_fill {
+	padding-left: 10px;
+		margin-top: 13px;
+
+}
+a {
+	color:white;
+}
+}
+// Главная
+.main {
+	background: url(../image/Main/home.svg) no-repeat ;
+	background-size: 110%;
+	h1 {
+	margin-top: 138px;
+	margin-bottom: 26px;
+	
+	font-size: 60px;
+	font-family: $bold;
+	span {
+		color:$grin;
+	}
+}
+form {
+	margin-bottom: 170px;
+}
+  form.catalin input{
+    float: left;
+    border: 1px solid $gray-light;
+    height: 70px;
+    width:600px;
+    margin: 0;
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 6px 0 0 6px;
+  }
+  form.catalin button{
+    float: left;
+    border: none;
+		background-color: $grin;
+		border-radius:0 6px 6px 0;
+		border: 1px solid $gray-light;
+		border-left:none;
+    padding: 0;
+    margin: 0;
+    width: 174px;
+    height:70px;
+    cursor: pointer;
+    text-transform: uppercase;
+		text-align: center;
+		color:white;
+		font-family: $medium;
+		font-size: 20px;
+  }
+
+/* Placeholder
+-----------------------------------------------------*/
+  form.catalin input::-webkit-input-placeholder {
+     color: $gray;
+		font-family: $regular;
+		font-size: 18px;
+		padding: 24px;
+	}
+	input[type="text"]{padding: 24px;}
+   
+  form.catalin input:-moz-placeholder {
+     color: $gray;
+		font-family: $regular;
+		font-size: 18px;
+		padding: 24px;
+  }
+   
+  form.catalin input:-ms-input-placeholder {
+     color: $gray;
+		font-family: $regular;
+		font-size: 18px;
+		padding: 24px;
+	}
+}
+.factodes {
+
+&_blocks {
+border: 1px solid $gray-light;
+border-radius:6px;
+transform:translate(0, -80px);
+box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+&_block {
+	display: flex;
+	align-items: center;
+	padding: 41px 20px;
+	background-color: white;
+	border-left:1px solid $gray-light;
+	&:first-child{border-left: none;}
+
+
+
+}
+
+&_text {
+	display: flex;
+	flex-direction: column;
+	padding-left: 18px;
+}
+&_textt {
+	font-family: $regular;
+	font-size: 20px;
+	color:$black;
+	margin-top: 5px;
+	width: 20px;
+}
+&_fact {
+		font-family: $regular;
+	font-size: 16px;
+		color:$black;
+		border: 1px solid $grin;
+		padding: 10px 14px;
+		border-radius:6px;
+		margin-top: 9px;
+	span {
+		color:$grin;
+		font-family: $bold;
+	}
+}
+}
+.special {
+	border-bottom: 1px solid 	$gray-light;
+	padding-bottom: 80px;
+	color:$black;
+	.title {
+		margin:20px 0 40px 0 ;
+	}
+	&_block {
+		width: 270px;
+		border-radius:3px;
+		border-top:3px solid $grin;
+		padding: 29px 0 19px 14px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, .2);
+		margin: 0 auto;
+	}
+	&_icon {
+		padding-right: 20px;
+	}
+	&_fact{
+		display: flex;
+		justify-content: space-between;
+		padding-top: 20px;
+		padding-bottom: 2px;
+		color:$gray;
+		font-family: $regular;
+		font-size: 20px;
+	}
+	&_text {
+		font-size: 20px;
+		font-family: $medium;
+		line-height: 1;
+		span{
+			font-family: $regular;
+		}
+	}
+
+}
+.services{
+	display: flex;
+	justify-content: space-between;
+	&_block {
+		margin-top: 60px;
+				padding:  20px 20px 20px 0;
+	}
+	.serv {
+				margin-bottom: 36px;
+	}
+	a {
+		font-family:  $regular;
+		font-size: 18px;
+		color: $black;
+		display: block;
+		padding-bottom: 36px;
+
+		span {
+			color:$gray;
+		}
+	}
+}
+
+
+// Более 120 юоистов
+.lawyer {
+	background-color: #fff;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color:$black;
+	
+	&_block {
+		border:1px solid $gray-light;
+		border-radius:6px;
+		padding-bottom: 20px;
+		&-photo {
+			margin: 10px;
+		} 
+.rewyes {
+	margin-top: 5px;
+	display: inline-block;
+	border:1px solid $gray-light;
+	border-radius:4px;
+	padding: 10px 18px 10px 10px;
+	font-size: 15px;
+	font-family: $regular;
+	&_icon {
+		transform: translateY(3.5px);
+		padding-right: 20px;
+	}
+}
+	&-ingo {
+		margin-top: 20px;
+		.specialistik {
+			margin-top: 8px;
+										img {
+					transform: translateY(5px);
+				}
+			a {
+				text-decoration: underline;
+				margin-left: 28px;
+				font-size: 14px;
+				color:black;
+				font-family: $regular;
+			}
+		}
+		.uslugi {
+			margin-top: 12px;
+		}
+		.name {
+			font-family: $regular;
+			font-size: 25px;
+						a {
+			color:$black;
+			font-family: $regular;
+			font-size: 25px;
+			}
+		}
+			.special, .time {
+			font-family: $regular;
+			font-size: 16px;
+			padding: 0;
+			margin-top: 10px;
+	}
+	.time{
+		margin-left: 20px;
+	}
+	.week {
+		margin-top: 15px;
+		display: inline-block;
+		margin-left: 50px;
+		font-size: 15px;
+		font-family: $medium;
+		.weekdays {
+			border:1px solid $grin;
+			padding: 6px;
+			color:$grin;
+			border-radius: 6px;
+		}
+		.output {
+			border:1px solid $gray-light;
+			padding: 6px;
+			color:$gray-light;
+			border-radius: 6px;
+		}
+	}
+	.spec {
+			font-family: $regular;
+			font-size: 14px;
+			padding: 6px;
+			background-color: #F8F8FE;
+			border-radius:6px;
+			line-height: 2.5;
+	}
+	}
+	}
+	.stars {
+		margin-top: 10px;
+		margin-left: 16px;
+		.star {
+			transform: translateY(1px);
+		}
+		span {
+			font-family: $regular;
+		}
+	}
+	.phone_card{
+		margin-left: 60px;
+		margin-top: 20px;
+	}
+	.phone {
+		right: 100px;
+		width: 230px;
+		height: 54px;
+		text-align: center;
+		font-family: $regular;
+		font-size: 18px;
+		color:$black;
+		background-color: #F8F8FE;
+		border-radius:6px;
+		padding:18px;
+		span {
+			font-size: 15px;
+			color:$grin;
+			font-family: $medium;
+		}
+	}
+	.WhatsApp_block {
+		width: 230px;
+		margin-top: 10px;
+		font-family: $medium;
+		font-size: 18px;
+		padding: 12px;
+		border:1px solid $grin;
+		border-radius: 6px;
+		height: 54px;
+		.wa_text {
+			color:$grin;
+		}
+		
+		.wa_icon {
+			transform: translateY(3px);
+			padding-right: 15px;
+		}
+	}
+			.consultation { 
+				font-family: $medium;
+				width: 230px;
+				text-align: center;
+		}
+&_button {
+	color:white;
+	font-family: $medium;
+	font-size: 18px;
+	border-radius: 6px;
+	background-color: $grin;
+	padding: 24px;
+	width: 270px;
+	border:none;
+
+}	
+
+}
+//  Полезное 
+.useful {
+	&_button {
+		margin-top: 50px;	
+		color:$grin;
+	font-family: $medium;
+	font-size: 18px;
+	border-radius: 6px;
+	background-color: transparent;
+	text-align: center;
+	padding: 24px;
+	width: 270px;
+	border:1px solid $gray-light;
+	margin-bottom: 80px;
+
+	}
+	&_date{
+		margin-top: 15px;
+		font-family: $regular;
+		font-size: 14px;
+		color:$gray;
+	}
+	&_text{
+		color:$black;
+		font-size: 16px;
+		font-family: $medium;
+	}
+	&_read{
+		font-size: 16px;
+		font-family: $medium;
+		color:$grin;
+	}
+}
+// Информация
+.info {
+	background-color: #f8f8fe;
+	padding-top: 80px;
+	text-align: center;
+		&_title {
+			font-family: $medium;
+		h2 {
+			font-size: 35px;
+			color:$black;
+		}
+		h3 {
+			font-size: 30px;
+			color:$grin;
+		}
+	}
+
+	&_img {
+		margin-top: 40px;
+	}
+	&_title {
+		margin-top: 40px;
+		font-size: 20px;
+		font-family: $medium;
+		color:$black;
+	}
+	&_subtitle {
+		margin-top: 8px;
+		font-size: 16px;
+		font-family: $regular;
+		color:$gray;
+		padding: 0 25px;
+	}
+	&_button {
+		margin-top: 44px;
+		margin-bottom: 100px;
+	color:white;
+	font-family: $medium;
+	font-size: 18px;
+	border-radius: 6px;
+	background-color: $grin;
+	padding: 24px;
+	width: 270px;
+	border:none;
+
+}
+
+}
+// О сервисе Yuristy.kz
+.service {
+	padding: 60px;
+	background-color: #fff;
+	h2 {
+		font-family: $medium;
+	color:$black;
+	font-size: 42px;
+	}
+	&_text-1 {
+	font-family: $regular;
+color:$gray;
+font-size: 17px;
+	}
+	&_text-2 {
+		margin-top: 30px;
+	font-family: $regular;
+color:$gray;
+font-size: 17px;
+	}
+	&_button {
+				margin-top: 50px;	
+		color:$grin;
+	font-family: $medium;
+	font-size: 18px;
+	border-radius: 6px;
+	background-color: transparent;
+	text-align: center;
+	padding: 24px;
+	width: 270px;
+	border:1px solid $gray-light;
+	margin-bottom: 50px;
+	}
+}
+// footer
+	.footer {
+		height: 178px;
+		padding-top: 40px;
+		background-color: #F8F8FE;
+		font-size: 16px;
+		font-family: $medium;
+		color:$gray;
+		text-align: center;
+
+		&_city {
+			padding-top: 5px;
+			color:$gray;
+		}
+		&_specialists {
+			padding-top: 5px;
+			a {
+				color:$gray;
+			}
+		}
+		&_companies {
+			padding-top: 5px;
+			a {
+				color:$gray;
+			}
+		}
+		&_notaries {
+			padding-top: 5px;
+			a {
+				color:$gray;
+			}
+		}
+		&_useful {
+			padding-top: 5px;
+			text-align: left;
+			a {
+				color:$gray;
+				
+			}
+		}
+		&_btn-1 {
+			padding: 12px 25px;
+			background-color: transparent;
+			color:$grin;
+			border:1px solid $grin;
+			border-radius:4px ;
+			margin-right: 10px;
+			font-size: 16px;
+			font-family: $medium;
+		}
+		&_btn-2 {
+			padding: 12px 25px;
+			background-color:$grin;
+			color:white;
+			border:none;
+			border-radius:4px ;
+			margin-right: 10px;
+			font-size: 16px;
+			font-family: $medium;
+		}
+		&_info {
+			text-align-last: left;
+			font-size: 15px;
+			font-family: $regular;
+			color:$gray;
+			a {
+				font-family: $medium;
+				color:$gray;
+			}
+		}
+		&_social {
+			text-align-last: right;
+			padding-right:10px;
+		}
+		.info {
+			border-top:1px solid $gray-light;
+			margin-top: 30px;
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+	}
+	
+
+
+
+
+/* Экрна юристы */
+//  форма
+	.form {
+background-color: #F7F7F7;
+form {
+	margin-top: 20px;
+	margin-bottom: 110px;
+}
+  form.catalin input{
+    float: left;
+    border: 1px solid $gray-light;
+    height: 70px;
+    width:600px;
+    margin: 0;
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 6px 0 0 6px;
+  }
+  form.catalin button{
+    float: left;
+    border: none;
+		background-color: $grin;
+		border-radius:0 6px 6px 0;
+		border: 1px solid $gray-light;
+		border-left:none;
+    padding: 0;
+    margin: 0;
+    width: 174px;
+    height:70px;
+    cursor: pointer;
+    text-transform: uppercase;
+		text-align: center;
+		color:white;
+		font-family: $medium;
+		font-size: 20px;
+  }
+
+
+  form.catalin input::-webkit-input-placeholder {
+     color: $gray;
+		font-family: $regular;
+		font-size: 18px;
+		padding: 24px;
+	}
+	input[type="text"]{padding: 24px;}
+   
+  form.catalin input:-moz-placeholder {
+     color: $gray;
+		font-family: $regular;
+		font-size: 18px;
+		padding: 24px;
+  }
+   
+  form.catalin input:-ms-input-placeholder {
+     color: $gray;
+		font-family: $regular;
+		font-size: 18px;
+		padding: 24px;
+	}
+}
+// Юристы и адвокаты в Нур-Султане (Астана)
+.title {
+	background-color: #fff;
+		border-bottom:1px solid $gray-light;
+	margin-bottom: 45px;
+	padding-bottom: 45px;
+	margin-top: 17px;
+}
+.head {
+	h4 {
+		font-size: 50px;
+		font-family: $medium;
+		margin: 24px 0 9px 0;
+	}
+	a {
+		font-size: 15px;
+		font-family: $regular;
+		color:$black;
+	}
+	&_special {
+				font-size: 15px;
+		font-family: $regular;
+		color:$gray;
+	}
+	&_img {
+		img {
+		transform: translateY(3px);
+		margin: 0 4px;
+		}
+	}
+	&_subtitle {
+		font-size: 16px;
+		color:$gray;
+		font-family: $regular;
+	}
+	&_more {
+		font-size: 16px;
+		color:$grin;
+		font-family: $regular;
+	}
+	&_civil {
+		margin-top: 20px;
+		font-size: 18px;
+		color:$black;
+		font-family: $regular;
+		border:1px solid $gray-light;
+		padding: 20px;
+		border-radius: 6px;
+
+		img {
+			transform: translateY(2px);
+			margin-left: 240px;
+		}
+	}
+	&_sort {
+		margin-top: 20px;
+		margin-left: 20px;
+		font-size: 18px;
+		font-family: $regular;
+		color:$black;
+		padding: 10px;
+		padding-left: 20px;
+		&-info {
+			font-size: 16px;
+			img {
+				transform: translateY(2px);
+			}
+		}
+	}
+
+}
+// Карточки юристов кнопка
+.lawyer_btn {
+	display: flex;
+	justify-content: center ; 
+	margin-bottom: 80px;
+	button {
+		height: 70px;
+		width: 360px;
+		background-color: transparent;
+		border:1px solid $grin;
+		border-radius: 6px;
+		color:$grin;
+		font-family: $medium;
+	}
+	img {
+		transform: translateX(40px);
+
+	}
+}
+// Регистрация
+.register {
+	background-color: #F8F8FE;
+	padding-top: 80px;
+	text-align: center;
+	font-family: $medium;
+	color:$black;
+	&_title {
+		font-size: 30px;
+		line-height: 1.5
+	}
+	&_conditions {
+		margin-top: 16px;
+		font-size: 20px;
+		a {
+			color:$grin;
+		}
+	}
+	&_btn {
+		button {
+		margin-top: 30px;
+		color: white;
+    font-family: "Proxima Nova Semibold", sans-serif;
+    font-size: 18px;
+    border-radius: 6px;
+    background-color: #10A578;
+    padding: 24px;
+    width: 320px;
+    border: none;
+		}
+
+	}
+	&_already {
+		margin-top: 40px;
+		margin-bottom: 90px;
+		width: 580px;
+		background-color: #fff;
+		padding: 30px 40px;
+		border:1px solid #E0E0F8;
+		border-radius: 6px;
+		&-title {
+			font-size: 30px;
+		}
+		&-text {
+			padding-top: 10px;
+			font-size: 20px;
+			a{
+				color:$grin;
+			}
+		}
+	}
+}
+
+/*Экран с юристом */
+.urist {
+	padding-top: 40px;
+}
+.block {
+	margin-top: 10px;
+	img {
+		transform: translateY(2px);
+	}
+	&-span {
+		padding-left: 10px;
+	}
+}
+.lawyer_block-ingo {
+	small {
+		font-size: 15px;
+	}
+}
+
+.lawyer_block-ingo .socio_week  {
+	margin-left: 10px;
+}
+.socio {
+	
+	small {
+		padding-left: 30px;
+		font-size: 14px;
+	}
+	span {
+		padding-left: 2px;
+	}
+}
+
+//  О специалисте 
+.about {
+	margin-top: 50px;
+	margin-bottom: 70px;
+	color:$black;
+	font-family: $regular;
+	&_title{
+		font-size: 30px;
+		margin-top: 40px;
+	}
+	&_text{
+		font-size: 18px;
+		margin-top: 10px;
+		line-height: 1.6;
+	}
+}
+// Отзывы
+.review {
+	h4 {
+			a {
+		color:$grin;
+	}
+	}
+	padding-top: 60px;
+	padding-bottom: 80px;
+	background-color: #F8F8FE;
+	&_users {
+		margin-bottom: 20px;
+		border:1px solid $gray-light;
+		border-radius:6px;
+		background-color: white;
+		padding: 20px 30px;
+		color:$black;
+		font-family: $regular;
+	}
+	&_name {
+		display: flex;
+		justify-content: space-between;
+		font-size: 20px;
+
+	}
+	&_date {
+		margin-top: 2px;
+		font-size: 15px;
+		color:$gray;
+	}
+	&_text {
+		line-height: 1.5;
+		margin-top: 12px;
+		color:#636480;
+	}
+}
+//  Похожие юристы
+.similar {
+	margin-top: 60px;
+	margin-bottom: 80px;
+	text-align: center;
+	&_title {
+		text-align: left;
+	}
+	&_block {
+		padding: 20px;
+	font-family: $regular;
+	color:$black;
+	}
+	&_name {
+		margin-top: 22px;
+		font-size: 18px;
+	}
+	&_star {
+		margin-top: 15px;
+		img {
+		transform: translateY(2px);
+	}
+	}
+	&_review {
+		margin-top: 10px;
+		img {
+			transform: translateY(2px);
+		}
+	}
+}
+
+
+/*Третий экран Компании*/
+.firms {
+	&_block {
+		border-top:5px solid $grin;
+	}
+}
+
+// Профиль
+.profile {
+	.hr {
+		border-bottom: 1px solid $gray-light;
+		margin-top: 40px;
+		padding-bottom: 40px;
+	}
+		&-section_btn{ 
+			display: flex;
+			justify-content: flex-end;
+		button {
+		margin-top: 30px;
+		color: white;
+    font-family: "Proxima Nova Semibold", sans-serif;
+    font-size: 18px;
+    border-radius: 6px;
+    background-color: $grin;
+    padding: 24px;
+		width: 320px;
+		height: 70px;
+    border: none;
+		}
+	}
+	.form_btn {
+		margin-top: 18px;
+		img {
+			transform: translateY(8px);
+		}
+		button {
+		background-color: transparent;
+		border:none;
+		font-size: 16px;
+		color:$grin;
+		font-family: $medium;
+		}
+	}
+	.redacted {
+		button {
+		background-color: transparent;
+		border:none;
+		font-size: 16px;
+		padding: 5px;
+		color:$grin;
+		font-family: $regular;
+		}
+	}
+	&_btn {
+		display: inline-block;
+		button {
+		background-color: transparent;
+		border:1px solid $grin;
+		border-radius:4px; 
+		font-size: 14px;
+		padding: 5px;
+		color:$grin;
+		font-family: $medium;
+		}
+	}
+.lawyer_block-photo {
+	text-align: center;
+img {
+	width: 135px;
+}
+}
+.title {
+	margin-bottom: 0;
+}
+&_form {
+	display: flex;
+	margin-top: 26px;
+	align-items:center;
+.name {
+	font-size: 18px;
+	color:$gray;
+
+}
+.input {
+	padding: 20px;
+}
+}
+form {
+	input, textarea{
+		width: 320px;
+		margin-left: 40px;
+		display: block;
+		padding: 20px;
+		border-radius:6px;
+		border:1px solid $gray-light;
+	}
+}
+main{
+	// border:1px solid red;
+	transform: translateY(-57px);
+	font-family: $regular;
+}
+section {
+	// border:1px solid red;
+  display: none;
+  padding-top: 20px;
+  border-top: 1px solid white;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+	font-size: 20px;
+  text-align: center;
+  color: $black;
+  border: 1px solid transparent;
+}
+
+input:checked + label {
+  color: $black;
+  border: 1px solid transparent;
+  border-bottom: 3px solid $grin;
+  border-top: 1px solid #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+@media screen and (max-width: 650px) {
+  label {
+    font-size: 0;
+  }
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  label {
+    padding: 15px;
+  }
+}
+
+
+}
